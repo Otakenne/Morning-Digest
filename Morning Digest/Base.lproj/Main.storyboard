@@ -611,11 +611,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Oet-DZ-gCk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="334"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="325"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j2T-L1-eGA">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="232"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="BUY-vR-knM">
                                                 <size key="itemSize" width="300" height="200"/>
@@ -625,70 +625,87 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopHeadlinesCollectionViewCell" id="uMg-Xf-7hx" customClass="TopHeadlinesCollectionViewCell" customModule="Morning_Digest" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="16" width="300" height="200"/>
+                                                    <rect key="frame" x="0.0" y="16.5" width="300" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vaA-it-2IE">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql3-Kp-PWW">
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pwi-eW-nU8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5A9-et-wcT">
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql3-Kp-PWW">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="200" id="DWr-qr-Fe4"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMu-Gq-zHR">
-                                                                        <rect key="frame" x="0.0" y="50" width="300" height="150"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NBA finals: Warriors blow a 3 - 1 lead against the Cavs in the 2016 NBA finals" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voS-VG-kDi">
-                                                                                <rect key="frame" x="15" y="81" width="270" height="54"/>
-                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5A9-et-wcT">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="200" id="DWr-qr-Fe4"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMu-Gq-zHR">
+                                                                                <rect key="frame" x="0.0" y="50" width="300" height="150"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NBA finals: Warriors blow a 3 - 1 lead against the Cavs in the 2016 NBA finals" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voS-VG-kDi">
+                                                                                        <rect key="frame" x="15" y="81" width="270" height="54"/>
+                                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="voS-VG-kDi" secondAttribute="trailing" constant="15" id="1sq-ck-cMl"/>
+                                                                                    <constraint firstItem="voS-VG-kDi" firstAttribute="leading" secondItem="JMu-Gq-zHR" secondAttribute="leading" constant="15" id="ioc-p3-wjl"/>
+                                                                                    <constraint firstAttribute="height" constant="150" id="xn2-Uu-24l"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="voS-VG-kDi" secondAttribute="bottom" constant="15" id="ybC-gW-yHA"/>
+                                                                                </constraints>
+                                                                            </view>
                                                                         </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="trailing" secondItem="voS-VG-kDi" secondAttribute="trailing" constant="15" id="1sq-ck-cMl"/>
-                                                                            <constraint firstItem="voS-VG-kDi" firstAttribute="leading" secondItem="JMu-Gq-zHR" secondAttribute="leading" constant="15" id="ioc-p3-wjl"/>
-                                                                            <constraint firstAttribute="height" constant="150" id="xn2-Uu-24l"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="voS-VG-kDi" secondAttribute="bottom" constant="15" id="ybC-gW-yHA"/>
+                                                                            <constraint firstItem="5A9-et-wcT" firstAttribute="top" secondItem="Ql3-Kp-PWW" secondAttribute="top" id="3B1-Y2-81O"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="JMu-Gq-zHR" secondAttribute="bottom" id="3bM-I6-Sez"/>
+                                                                            <constraint firstItem="5A9-et-wcT" firstAttribute="leading" secondItem="Ql3-Kp-PWW" secondAttribute="leading" id="Hme-pY-FaQ"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="JMu-Gq-zHR" secondAttribute="trailing" id="ZDF-XM-EmI"/>
+                                                                            <constraint firstItem="JMu-Gq-zHR" firstAttribute="leading" secondItem="Ql3-Kp-PWW" secondAttribute="leading" id="dgW-FN-hlA"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="5A9-et-wcT" secondAttribute="bottom" id="kn5-3c-ug9"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="5A9-et-wcT" secondAttribute="trailing" id="zUr-UX-cG7"/>
                                                                         </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="5A9-et-wcT" firstAttribute="top" secondItem="Ql3-Kp-PWW" secondAttribute="top" id="3B1-Y2-81O"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="JMu-Gq-zHR" secondAttribute="bottom" id="3bM-I6-Sez"/>
-                                                                    <constraint firstItem="5A9-et-wcT" firstAttribute="leading" secondItem="Ql3-Kp-PWW" secondAttribute="leading" id="Hme-pY-FaQ"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="JMu-Gq-zHR" secondAttribute="trailing" id="ZDF-XM-EmI"/>
-                                                                    <constraint firstItem="JMu-Gq-zHR" firstAttribute="leading" secondItem="Ql3-Kp-PWW" secondAttribute="leading" id="dgW-FN-hlA"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="5A9-et-wcT" secondAttribute="bottom" id="kn5-3c-ug9"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="5A9-et-wcT" secondAttribute="trailing" id="zUr-UX-cG7"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Ql3-Kp-PWW" secondAttribute="bottom" id="Gq6-Vp-Dbl"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Ql3-Kp-PWW" secondAttribute="trailing" id="LqR-mE-zka"/>
+                                                                    <constraint firstItem="Ql3-Kp-PWW" firstAttribute="top" secondItem="Pwi-eW-nU8" secondAttribute="top" id="V6M-16-owX"/>
+                                                                    <constraint firstItem="Ql3-Kp-PWW" firstAttribute="leading" secondItem="Pwi-eW-nU8" secondAttribute="leading" id="YIb-qz-3mf"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                         <integer key="value" value="15"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                                        <real key="value" value="0.29999999999999999"/>
+                                                                        <real key="value" value="0.10000000000000001"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                                                        <size key="value" width="1" height="2"/>
+                                                                        <size key="value" width="1" height="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                                                        <integer key="value" value="15"/>
+                                                                        <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="Ql3-Kp-PWW" firstAttribute="leading" secondItem="vaA-it-2IE" secondAttribute="leading" id="TFk-nN-1Sl"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Ql3-Kp-PWW" secondAttribute="trailing" id="UnX-7v-49v"/>
-                                                            <constraint firstItem="Ql3-Kp-PWW" firstAttribute="top" secondItem="vaA-it-2IE" secondAttribute="top" id="imd-Vv-F3b"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Ql3-Kp-PWW" secondAttribute="bottom" id="s2y-C3-cWh"/>
+                                                            <constraint firstItem="Pwi-eW-nU8" firstAttribute="top" secondItem="vaA-it-2IE" secondAttribute="top" id="K16-mE-gXt"/>
+                                                            <constraint firstItem="Pwi-eW-nU8" firstAttribute="leading" secondItem="vaA-it-2IE" secondAttribute="leading" id="SE3-9B-gAs"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Pwi-eW-nU8" secondAttribute="trailing" id="je6-vn-6VB"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Pwi-eW-nU8" secondAttribute="bottom" id="m87-VO-cAK"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <connections>
@@ -704,7 +721,7 @@
                                             </connections>
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbg-X4-HoP">
-                                            <rect key="frame" x="20" y="282" width="139" height="32"/>
+                                            <rect key="frame" x="20" y="273" width="139" height="32"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -712,7 +729,7 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="Sbg-X4-HoP" firstAttribute="top" secondItem="j2T-L1-eGA" secondAttribute="bottom" constant="50" id="2Y0-8y-5pc"/>
+                                        <constraint firstItem="Sbg-X4-HoP" firstAttribute="top" secondItem="j2T-L1-eGA" secondAttribute="bottom" constant="40" id="2Y0-8y-5pc"/>
                                         <constraint firstItem="Sbg-X4-HoP" firstAttribute="leading" secondItem="Oet-DZ-gCk" secondAttribute="leading" constant="20" id="OUP-Sk-Dvu"/>
                                         <constraint firstItem="j2T-L1-eGA" firstAttribute="leading" secondItem="Oet-DZ-gCk" secondAttribute="leading" id="WLE-xs-NB1"/>
                                         <constraint firstItem="j2T-L1-eGA" firstAttribute="top" secondItem="Oet-DZ-gCk" secondAttribute="top" id="YIf-9k-4vr"/>
@@ -722,7 +739,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsStoryTableViewCell" rowHeight="140" id="6WQ-qR-t34" customClass="NewsStoryTableViewCell" customModule="Morning_Digest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="378.5" width="414" height="140"/>
+                                        <rect key="frame" x="0.0" y="369.5" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6WQ-qR-t34" id="xfi-mC-r7A">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
@@ -836,6 +853,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="j2T-L1-eGA" id="6SJ-44-efr"/>
+                        <outlet property="errorLayout" destination="ZYa-iV-P8j" id="E0e-Xf-vov"/>
+                        <outlet property="loadingLayout" destination="xOx-yq-eyy" id="LaL-bq-OfR"/>
                         <outlet property="tableView" destination="1N5-J0-Vvf" id="RbU-yu-zx6"/>
                     </connections>
                 </viewController>
