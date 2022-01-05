@@ -8,4 +8,4 @@
 import Foundation
 
 let API_KEY = "6533a57ffe614e88ae35b974469a4a8d"
-let REGION = "US"
+let REGION = "us"

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class GeneralNewsViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class GeneralNewsViewController: UIViewController {
     var headlineNewsArticles: [NewsArticle] = []
     var latestNewsArticles: [NewsArticle] = []
     var newsRequest: APIRequest<NewsResource>?
-    var newsCategory = "General"
+    var newsCategory = "general"
     
     var cellScaleWidth = 0.8
     var cellScaleHeight = 0.25
@@ -29,9 +30,6 @@ class GeneralNewsViewController: UIViewController {
         super.viewDidLoad()
         
         setupDisplay()
-        
-//        headlineNewsArticles = NewsArticle.getMockNewsArticle()
-//        latestNewsArticles = NewsArticle.getMockNewsArticle()
 
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScaleWidth)
@@ -46,35 +44,6 @@ class GeneralNewsViewController: UIViewController {
 //        headlineNewsArticles = viewModel.headlineNews
 //        latestNewsArticles = viewModel.latestNews
         
-//        var urlComponents = URLComponents()
-//        urlComponents.scheme = "https"
-//        urlComponents.host = "newsapi.org"
-//        urlComponents.path = "/v2/top-headlines"
-//        urlComponents.queryItems = [URLQueryItem(name: "apikey", value: API_KEY),
-//                                    URLQueryItem(name: "category", value: "general"),
-//                                    URLQueryItem(name: "country", value: "us")] //methodQueries
-//        let url = urlComponents.url
-//        let session = URLSession.shared
-//        let request = URLRequest(url: url!)
-//
-//        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-//                guard error == nil else {
-//                    return
-//                }
-//                guard let data = data else {
-//                    return
-//                }
-//                do {
-//                    let decoder = JSONDecoder()
-////                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                    let response = try decoder.decode(NewsResults.self, from: data)
-//                    print(response)
-//
-//                } catch {
-//                    print(error)
-//                }
-//            })
-//            task.resume()
         loadUpStories()
     }
     
@@ -117,7 +86,6 @@ class GeneralNewsViewController: UIViewController {
     }
 }
 
-
 extension GeneralNewsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -135,22 +103,27 @@ extension GeneralNewsViewController: UICollectionViewDataSource {
     }
 }
 
-extension GeneralNewsViewController: UIScrollViewDelegate, UICollectionViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let cellWidthWithSpacing = layout.itemSize.width + layout.minimumLineSpacing
+extension GeneralNewsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       if let url = headlineNewsArticles[indexPath.item].url {
+           let vc = SFSafariViewController(url: URL(string: url)!)
+           present(vc, animated: true )
+       }
+   }
+}
 
-        var offset = targetContentOffset.pointee
-        let index = (offset.x + scrollView.contentInset.left) / cellWidthWithSpacing
-
-        let roundedIndex = round(index)
-        offset = CGPoint(x: roundedIndex * cellWidthWithSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
-
-        targetContentOffset.pointee = offset
-    }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
+extension GeneralNewsViewController: UIScrollViewDelegate {
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        let cellWidthWithSpacing = layout.itemSize.width + layout.minimumLineSpacing
+//
+//        var offset = targetContentOffset.pointee
+//        let index = (offset.x + scrollView.contentInset.left) / cellWidthWithSpacing
+//
+//        let roundedIndex = round(index)
+//        offset = CGPoint(x: roundedIndex * cellWidthWithSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
+//
+//        targetContentOffset.pointee = offset
 //    }
 }
 
@@ -166,12 +139,19 @@ extension GeneralNewsViewController: UITableViewDataSource {
         
         cell.newsArticle = newsArticle
         
+        let clickableViewTouchedGesture = UITapGestureRecognizer(target: self, action: #selector(clickableViewTouched))
+        cell.addGestureRecognizer(clickableViewTouchedGesture)
+        
         return cell
     }
-
-
-}
-
-extension GeneralNewsViewController: UITableViewDelegate {
-
+    
+    @objc func clickableViewTouched(sender: UIGestureRecognizer) {
+        let view = sender.view
+        let indexPath = tableView.indexPathForView(view!)
+        
+        if let url = latestNewsArticles[indexPath!.row].url {
+            let vc = SFSafariViewController(url: URL(string: url)!)
+            present(vc, animated: true)
+        }
+    }
 }

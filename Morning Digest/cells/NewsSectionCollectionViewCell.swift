@@ -21,10 +21,10 @@ class NewsSectionCollectionViewCell: UICollectionViewCell {
             newsSectionLabel.text = newsSection.title
             if (newsSection.isSelected) {
                 newsSectionLabel.font = UIFont.boldSystemFont(ofSize: 27.0)
-                newsSectionLabel.textColor = .black
+                newsSectionLabel.textColor = UIColor(named: "PrimaryTextColor")
             } else {
                 newsSectionLabel.font = UIFont.systemFont(ofSize: 27.0)
-                newsSectionLabel.textColor = .darkGray
+                newsSectionLabel.textColor = UIColor(named: "SecondaryTextColor")
             }
         } else {
             newsSectionLabel.text = nil

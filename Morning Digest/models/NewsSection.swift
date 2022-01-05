@@ -17,7 +17,7 @@ class NewsSection {
     }
     
     static func loadNewsSection() -> [NewsSection] {
-        var newsSections = [NewsSection(title: "General", isSelected: true),
+        let newsSections = [NewsSection(title: "General", isSelected: true),
                             NewsSection(title: "Business", isSelected: false),
                             NewsSection(title: "Sports", isSelected: false),
                             NewsSection(title: "Health", isSelected: false),

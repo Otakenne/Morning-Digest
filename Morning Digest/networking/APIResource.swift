@@ -19,11 +19,11 @@ extension APIResource {
         urlComponents.scheme = "https"
         urlComponents.host = "newsapi.org"
         urlComponents.path = methodPath
-        urlComponents.queryItems = [URLQueryItem(name: "apikey", value: API_KEY),
-                                    URLQueryItem(name: "category", value: "general"),
-                                    URLQueryItem(name: "country", value: "us")] //methodQueries
+        urlComponents.queryItems = methodQueries //[URLQueryItem(name: "apikey", value: API_KEY),
+                                    //URLQueryItem(name: "category", value: "general"),
+                                    //URLQueryItem(name: "country", value: "us")] //
         let url = urlComponents.url
-        print(url)
+//        print(url)
         return url
     }
 }
